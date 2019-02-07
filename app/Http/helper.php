@@ -8,7 +8,6 @@ if (!function_exists('current_url')) {
      */
     function current_url()
     {
-        dd(123);
         $req = app('request');
         
         return '/' . $req->path();
