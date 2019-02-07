@@ -37,11 +37,11 @@ class PostController extends Controller
                 
                 if ($total > 90 && $total <= 100) {
                     $nilai = "A";
-                } elseif ($total > 80 && $total < 90) {
+                } elseif ($total > 80 && $total <= 90) {
                     $nilai = "B";
-                } elseif ($total > 70 && $total < 80) {
+                } elseif ($total > 70 && $total <= 80) {
                     $nilai = "C";
-                } elseif ($total > 60 && $total < 70) {
+                } elseif ($total > 60 && $total <= 70) {
                     $nilai = "D";
                 } else {
                     $nilai = "E";
