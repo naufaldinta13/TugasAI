@@ -5,7 +5,7 @@
             <div class="col-lg-12">
                 <div class="footer_top flex-column">
                     <div class="footer_logo">
-                        <h4>SMK IIM SEJABODETABEK</h4>
+                        <h4>SMP Caution Brad Bogor</h4>
                     </div>
                     <div class="footer_social">
                         <a href="https://www.instagram.com/naufaldinta/" target="_blank"><i class="fa fa-facebook"></i></a>
