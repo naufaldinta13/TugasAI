@@ -24,7 +24,7 @@
                                         <label class="col-sm-5 control-label " for="nrr">Nilai Rata-Rata kelas 4-6</label>
 
                                         <div class="col-sm-7">
-                                            <input type="number" name="items[{{$i}}][nrr]" class="form-control" id="nrr">
+                                            <input type="number" name="items[{{$i}}][nrr]" class="form-control" min="1" max="100" id="nrr">
                                         </div>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                         <label class="col-sm-5 control-label" for="nun">Nilai UN</label>
 
                                         <div class="col-sm-7">
-                                            <input type="number" name="items[{{$i}}][nun]" class="form-control" id="nun">
+                                            <input type="number" name="items[{{$i}}][nun]" class="form-control" min="1" max="100" id="nun">
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                                         <label class="col-sm-5 control-label" for="nuas">Nilai UAS</label>
 
                                         <div class="col-sm-7">
-                                            <input type="number" name="items[{{$i}}][nuas]" class="form-control" id="nuas">
+                                            <input type="number" name="items[{{$i}}][nuas]" class="form-control" min="1" max="100" id="nuas">
                                         </div>
                                     </div>
                                 </div>
@@ -51,17 +51,17 @@
                                         <label class="col-sm-5 control-label" for="nkh">Rata-Rata Kehadiran Kelas 4-6</label>
 
                                         <div class="col-sm-7">
-                                            <input type="number" name="items[{{$i}}][nkh]" class="form-control" id="nkh">
+                                            <input type="number" name="items[{{$i}}][nkh]" class="form-control" min="1" max="100" id="nkh">
 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group no-margin-hr panel-padding-h">
                                     <div class="row ">
-                                        <label class="col-sm-5 control-label" for="ntest]">Nilai Tes Masuk</label>
+                                        <label class="col-sm-5 control-label" for="ntest">Nilai Tes Masuk</label>
 
                                         <div class="col-sm-7">
-                                            <input type="number" name="items[{{$i}}][ntest]]" class="form-control" id="ntest]">
+                                            <input type="number" name="items[{{$i}}][ntest]" class="form-control" min="1" max="100" id="ntest">
                                         </div>
                                     </div>
                                 </div>

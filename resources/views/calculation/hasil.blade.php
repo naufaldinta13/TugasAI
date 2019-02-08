@@ -8,47 +8,37 @@
                 </div>
                 <div class="panel-body no-padding-hr">
                     <div class="row">
-                        @foreach($hasil as $item)
-                            <div class="col-sm-6" style="margin-top: 50px;">
-                                <div class="form-group no-margin-hr panel-padding-h">
-                                    <div class="row">
-                                        <label class="col-sm-5 control-label" for="nama">Nama</label>
-
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" value="{{ $item->nama }}" readonly>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-hr panel-padding-h ">
-                                    <div class="row ">
-                                        <label class="col-sm-5 control-label " for="nrr">Nilai</label>
-
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" value="{{ $item->nilai }}" readonly>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-hr panel-padding-h ">
-                                    <div class="row ">
-                                        <label class="col-sm-5 control-label" for="nun">Total</label>
-
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" value="{{ $item->total }}" readonly>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-hr panel-padding-h ">
-                                    <div class="row ">
-                                        <label class="col-sm-5 control-label" for="nun">Keterangan</label>
-
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" value="{{ $item->keterangan }}" readonly>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-sm-12">
+                            <p class="text-center"> Selamat Kepada Siswa / Siswi Yang Keterima</p>
+                        </div>
+                        <div class="col-sm-12 mt-3">
+                            <div class="table-responsives no-margin no-padding" style="background: #efefef;">
+                                <table class="table table-condensed no-border-hr table-input text-center" style="min-width: 600px;">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Peserta</th>
+                                        <th>Nilai</th>
+                                        <th>Total</th>
+                                        <th>Keterangan</th>
+                                        <th>Rangking</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($hasil as $index => $item)
+                                        <tr>
+                                            <td>{{ $index + 1 }}</td>
+                                            <td>{{ $item->nama }}</td>
+                                            <td>{{ $item->nilai }}</td>
+                                            <td>{{ $item->total }}</td>
+                                            <td @if($item->keterangan == "Lolos") style="background: #28a745;" @else style="background: #dc3545;" @endif><span style="color: white;">{{ $item->keterangan }}</span></td>
+                                            <td>{{ $index + 1 }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
                     <div class="panel-footer text-right">
                         <a href="{{ route('calculation::calculation.rangking') }}" style="font-size: 15px !important;" class="btn btn-flat">Kembali</a>
