@@ -24,7 +24,11 @@ class PostController extends Controller
         $datas = [];
         if (is_array($data)) {
             foreach ($data as $value) {
-                $total = round(($value['nrr'] + $value['nun'] + $value['nuas'] + $value['nkh'] + $value['ntest']) / 5, 2);
+                
+                $un = round($value['nun'] * 3.33);
+                
+                
+                $total = round(($value['nrr'] + $un + $value['nuas'] + $value['nkh'] + $value['ntest']) / 5, 2);
                 
                 if ($total > 90 && $total <= 100) {
                     $nilai = "A";
