@@ -9,32 +9,45 @@
                 <div class="panel-body no-padding-hr">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p class="text-center"> Selamat Kepada Siswa / Siswi Yang Keterima</p>
+                            <p class="text-center"> Selamat Kepada Siswa / Siswi Yang Lolos</p>
                         </div>
                         <div class="col-sm-12 mt-3">
                             <div class="table-responsives no-margin no-padding" style="background: #efefef;">
                                 <table class="table table-condensed no-border-hr table-input text-center" style="min-width: 600px;">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>Nomor Peserta</th>
+                                        <th>Rangking</th>
                                         <th>Nama Peserta</th>
                                         <th>Nilai</th>
                                         <th>Total</th>
                                         <th>Keterangan</th>
-                                        <th>Rangking</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($hasil as $index => $item)
+                                    <?php
+                                    $no = 0;
+                                    ?>
+                                    @if(count($hasil) > 0)
+                                        @foreach($hasil as $key => $item)
+                                            <tr>
+                                                <td>PSRT {{ $key + 1 }}</td>
+                                                <td>{{ $no+1 }}</td>
+                                                <td>{{ $item->nama }}</td>
+                                                <td>{{ $item->nilai }}</td>
+                                                <td>{{ $item->total }}</td>
+                                                <td @if($item->keterangan == "Lolos") style="background: #28a745;" @else style="background: #dc3545;" @endif><span style="color: white;">{{ $item->keterangan }}</span></td>
+                                            </tr>
+                                            <?php
+                                            $no++;
+                                            ?>
+                                        @endforeach
+                                    @else
                                         <tr>
-                                            <td>{{ $index + 1 }}</td>
-                                            <td>{{ $item->nama }}</td>
-                                            <td>{{ $item->nilai }}</td>
-                                            <td>{{ $item->total }}</td>
-                                            <td @if($item->keterangan == "Lolos") style="background: #28a745;" @else style="background: #dc3545;" @endif><span style="color: white;">{{ $item->keterangan }}</span></td>
-                                            <td>{{ $index + 1 }}</td>
+                                            <td colspan="6">Tidak Ada Peserta</td>
                                         </tr>
-                                    @endforeach
+
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>

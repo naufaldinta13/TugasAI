@@ -19,6 +19,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group no-margin-hr panel-padding-h">
+                                    <div class="row">
+                                        <label class="col-sm-5 control-label" for="nama">Nomor Peserta</label>
+
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" value="PSRT{{ $i+1 }}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group no-margin-hr panel-padding-h ">
                                     <div class="row ">
                                         <label class="col-sm-5 control-label " for="nrr">Nilai Rata-Rata kelas 4-6</label>
@@ -39,7 +48,7 @@
                                 </div>
                                 <div class="form-group no-margin-hr panel-padding-h ">
                                     <div class="row ">
-                                        <label class="col-sm-5 control-label" for="nuas">Nilai UAS</label>
+                                        <label class="col-sm-5 control-label" for="nuas">Nilai US</label>
 
                                         <div class="col-sm-7">
                                             <input type="number" name="items[{{$i}}][nuas]" class="form-control" min="1" max="100" id="nuas">
@@ -68,7 +77,7 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="panel-footer text-right" >
+                    <div class="panel-footer text-right">
                         <button type="submit" class="btn btn-success btn-flat actions" style="font-size: 15px !important;">Proses</button>
                     </div>
                 </div>

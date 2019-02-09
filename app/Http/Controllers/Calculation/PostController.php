@@ -21,18 +21,6 @@ class PostController extends Controller
         $datas = [];
         if (is_array($data)) {
             foreach ($data as $value) {
-//                if ($value['nkh'] == "A") {
-//                    $nkh = 90;
-//                } else if ($value['nkh'] == "B") {
-//                    $nkh = 80;
-//                } else if ($value['nkh'] == "C") {
-//                    $nkh = 70;
-//                } else if ($value['nkh'] == "D") {
-//                    $nkh = 60;
-//                } else if ($value['nkh'] == "D") {
-//                    $nkh = 59;
-//                }
-//
                 $total = round(($value['nrr'] + $value['nun'] + $value['nuas'] + $value['nkh'] + $value['ntest']) / 5, 2);
                 
                 if ($total > 90 && $total <= 100) {
@@ -85,5 +73,4 @@ class PostController extends Controller
         return view('calculation.hasil', $data);
         
     }
-    
 }
