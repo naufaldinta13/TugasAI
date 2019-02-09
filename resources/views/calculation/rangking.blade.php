@@ -8,7 +8,7 @@
                 </div>
                 <div class="panel-body no-padding-hr">
                     <div class="row">
-                        @for ($i = 0; $i <=$jumlah_siswa; $i++)
+                        @for ($i = 0; $i < $jumlah_siswa; $i++)
                             <div class="col-sm-6" style="margin-top: 50px;">
                                 <div class="form-group no-margin-hr panel-padding-h">
                                     <div class="row">
