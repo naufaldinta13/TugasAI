@@ -1,14 +1,14 @@
 @section('content')
     <div class="row padding-sm-vr">
         <div class="with-transitions center-block col-lg-9" style="float: none;">
-            <form method="POST" action="{{ current_url() }}">
+            <form method="POST" action="{{ route('calculation::calculation.rangking') }}">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="panel-heading">
                     <span class="panel-title">Input Data</span>
                 </div>
                 <div class="panel-body no-padding-hr">
                     <div class="row">
-                        @for ($i = 0; $i <=3; $i++)
+                        @for ($i = 0; $i <=$jumlah_siswa; $i++)
                             <div class="col-sm-6" style="margin-top: 50px;">
                                 <div class="form-group no-margin-hr panel-padding-h">
                                     <div class="row">

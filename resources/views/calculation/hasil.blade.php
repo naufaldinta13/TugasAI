@@ -55,7 +55,7 @@
                     </div>
                     <div class="panel-footer text-right">
                         <a href="{{ route('report::report') }}" style="font-size: 15px !important;" class="btn btn-flat">Report</a>
-                        <a href="{{ route('calculation::calculation.rangking') }}" style="font-size: 15px !important;" class="btn btn-flat">Kembali</a>
+                        <a href="{{ route('siswa::siswa') }}" style="font-size: 15px !important;" class="btn btn-flat">Kembali</a>
                     </div>
                 </div>
             </form>

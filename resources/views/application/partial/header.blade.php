@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav justify-content-end">
                         <li class="nav-item {{ $home_tab }}"><a class="nav-link" href="{{ route('menu') }}">Home</a></li>
-                        <li class="nav-item {{ $calculation_tab }}"><a class="nav-link" href="{{ route('calculation::calculation.rangking') }}">Calculation</a></li>
+                        <li class="nav-item {{ $calculation_tab }}"><a class="nav-link" href="{{ route('siswa::siswa') }}">Calculation</a></li>
                         <li class="nav-item {{ isset($report_tab) ? $report_tab : '' }}"><a class="nav-link" href="{{ route('report::report') }}">Report</a></li>
                     </ul>
                 </div>
