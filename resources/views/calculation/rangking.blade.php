@@ -24,7 +24,7 @@
                                         <label class="col-sm-5 control-label" for="nama">Nomor Peserta</label>
 
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" value="PSRT{{ $i+1 }}" readonly>
+                                            <input type="text" name="items[{{$i}}][no_peserta]" class="form-control" value="PSRT{{ $total_peserta + ($i+1) }}" readonly>
                                         </div>
                                     </div>
                                 </div>

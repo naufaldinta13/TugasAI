@@ -10,12 +10,15 @@
 
 namespace App\Http\Controllers\Calculation;
 
-
 use Illuminate\Routing\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use App\Http\Controllers\Calculation\CreateService;
+
 
 class PostController extends Controller
 {
+    use CreateService;
+    
     private function calculationNilai($data)
     {
         $datas = [];
@@ -43,6 +46,7 @@ class PostController extends Controller
                 }
                 
                 $d = [
+                    'no_peserta' => $value['no_peserta'],
                     'nama'       => $value['nama'],
                     'nilai'      => $nilai,
                     'total'      => $total,
@@ -61,8 +65,13 @@ class PostController extends Controller
     
     public function PostCalculation(Request $request)
     {
-        $datas = $request->input('items');
-        $data  = [
+        $session_key        = "EEPWHS2Kzl";
+        $datas              = $request->input('items');
+        $session_get        = $this->sessionGet($session_key);
+        $session_collection = collect();
+        $session_collection->push($session_get['items']);
+        
+        $data = [
             'title'           => 'Hasil',
             'page_title'      => 'Hasil',
             'hasil'           => $this->calculationNilai($datas),
@@ -70,7 +79,14 @@ class PostController extends Controller
             'home_tab'        => ''
         ];
         
-        return view('calculation.hasil', $data);
+        $session_collection->push($data['hasil']);
         
+        $this->session_data['session_key'] = $session_key;
+        $this->session_data['items']       = $session_collection;
+        
+        $this->sessionSave($request, $session_key);
+        
+        
+        return view('calculation.hasil', $data);
     }
 }

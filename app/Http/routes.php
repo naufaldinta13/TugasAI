@@ -18,4 +18,7 @@ Route::group(['prefix' => 'a'], function () {
         Route::post('/rangking', ['uses' => 'Calculation\PostController@PostCalculation', 'as' => 'calculation::calculation.rangking']);
         Route::get('/rangking', ['uses' => 'Calculation\GetController@GetCalculation', 'as' => 'calculation::calculation.rangking']);
     });
+    Route::group(['prefix' => 'report'], function () {
+        Route::get('/', ['uses' => 'Report\GetController@GetReport', 'as' => 'report::report']);
+    });
 });

@@ -4,12 +4,12 @@
             <form method="POST" action="{{ current_url() }}">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="panel-heading">
-                    <span class="panel-title">Hasil Data</span>
+                    <span class="panel-title">Report Data</span>
                 </div>
                 <div class="panel-body no-padding-hr">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p class="text-center"> Selamat Kepada Siswa / Siswi Yang Lolos</p>
+                            <p class="text-center"> Report SMP Caution Brad Bogor </p>
                         </div>
                         <div class="col-sm-12 mt-3">
                             <div class="table-responsives no-margin no-padding" style="background: #efefef;">
@@ -17,7 +17,6 @@
                                     <thead>
                                     <tr>
                                         <th>Nomor Peserta</th>
-                                        <th>Rangking</th>
                                         <th>Nama Peserta</th>
                                         <th>Nilai</th>
                                         <th>Total</th>
@@ -28,19 +27,15 @@
                                     <?php
                                     $no = 0;
                                     ?>
-                                    @if(count($hasil) > 0)
-                                        @foreach($hasil as $key => $item)
+                                    @if(count($datas) > 0)
+                                        @foreach($datas as $key => $item)
                                             <tr>
-                                                <td>PSRT {{ $key + 1 }}</td>
-                                                <td>{{ $no+1 }}</td>
+                                                <td>{{ isset($item->no_peserta) ? $item->no_peserta : '-' }}</td>
                                                 <td>{{ $item->nama }}</td>
                                                 <td>{{ $item->nilai }}</td>
                                                 <td>{{ $item->total }}</td>
-                                                <td @if($item->keterangan == "Lolos") style="background: #28a745;" @else style="background: #dc3545;" @endif><span style="color: white;">{{ $item->keterangan }}</span></td>
+                                                <td>{{ $item->keterangan }}</td>
                                             </tr>
-                                            <?php
-                                            $no++;
-                                            ?>
                                         @endforeach
                                     @else
                                         <tr>
@@ -54,7 +49,6 @@
                         </div>
                     </div>
                     <div class="panel-footer text-right">
-                        <a href="{{ route('report::report') }}" style="font-size: 15px !important;" class="btn btn-flat">Report</a>
                         <a href="{{ route('calculation::calculation.rangking') }}" style="font-size: 15px !important;" class="btn btn-flat">Kembali</a>
                     </div>
                 </div>

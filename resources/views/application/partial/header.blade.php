@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html"><h2 class="text-bold">SMP Caution Brad Bogor</h2></a>
+                <a class="navbar-brand logo_h" href="{{ route('menu') }}"><h2 class="text-bold">SMP Caution Brad Bogor</h2></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -39,6 +39,7 @@
                     <ul class="nav navbar-nav menu_nav justify-content-end">
                         <li class="nav-item {{ $home_tab }}"><a class="nav-link" href="{{ route('menu') }}">Home</a></li>
                         <li class="nav-item {{ $calculation_tab }}"><a class="nav-link" href="{{ route('calculation::calculation.rangking') }}">Calculation</a></li>
+                        <li class="nav-item {{ isset($report_tab) ? $report_tab : '' }}"><a class="nav-link" href="{{ route('report::report') }}">Report</a></li>
                     </ul>
                 </div>
             </div>
