@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="form-group no-margin-hr panel-padding-h ">
                                     <div class="row ">
-                                        <label class="col-sm-5 control-label" for="nkh">Rata-Rata Kehadiran Kelas 4-6</label>
+                                        <label class="col-sm-5 control-label" for="nkh">Tingkat Kehadiran Kelas 4-6</label>
 
                                         <div class="col-sm-7">
                                             <input type="number" name="items[{{$i}}][nkh]" class="form-control" min="1" max="100" id="nkh">
