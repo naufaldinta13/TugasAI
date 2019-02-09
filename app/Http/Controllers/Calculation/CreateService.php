@@ -60,11 +60,13 @@ trait CreateService
     protected function getSessionData($data)
     {
         $datas = [];
-        $data['items']->each(function ($value, $key) use (&$datas, $data) {
-            foreach ($value as $d) {
-                $datas[] = $d;
-            }
-        });
+        if ($data['items']) {
+            $data['items']->each(function ($value, $key) use (&$datas, $data) {
+                foreach ($value as $d) {
+                    $datas[] = $d;
+                }
+            });
+        }
         
         return collect($datas);
         
