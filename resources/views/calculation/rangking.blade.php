@@ -42,7 +42,7 @@
                                         <label class="col-sm-5 control-label" for="nun">Nilai UN</label>
 
                                         <div class="col-sm-7">
-                                            <input type="number" name="items[{{$i}}][nun]" class="form-control" min="1" max="100" id="nun">
+                                            <input type="number" name="items[{{$i}}][nun]" class="form-control" min="1" max="30" id="nun">
                                         </div>
                                     </div>
                                 </div>
