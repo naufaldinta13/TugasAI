@@ -82,13 +82,14 @@ class PostController extends Controller
             'calculation_tab' => 'active',
             'home_tab'        => ''
         ];
-        
-        $session_collection->push($data['hasil']);
-        
-        $this->session_data['session_key'] = $session_key;
-        $this->session_data['items']       = $session_collection;
-        
-        $this->sessionSave($request, $session_key);
+        if (count($data['hasil']) != 0) {
+            $session_collection->push($data['hasil']);
+            
+            $this->session_data['session_key'] = $session_key;
+            $this->session_data['items']       = $session_collection;
+            
+            $this->sessionSave($request, $session_key);
+        }
         
         
         return view('calculation.hasil', $data);
