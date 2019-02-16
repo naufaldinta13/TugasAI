@@ -31,10 +31,10 @@
                                         @foreach($datas as $key => $item)
                                             <tr>
                                                 <td>{{ isset($item->no_peserta) ? $item->no_peserta : '-' }}</td>
-                                                <td>{{ $item->nama }}</td>
-                                                <td>{{ $item->nilai }}</td>
-                                                <td>{{ $item->total }}</td>
-                                                <td>{{ $item->keterangan }}</td>
+                                                <td>{{ isset($item->nama) ? $item->nama : '-' }}</td>
+                                                <td>{{ isset($item->nilai) ? $item->nilai : '-'  }}</td>
+                                                <td>{{ isset($item->total) ? $item->total : '-' }}</td>
+                                                <td>{{ isset($item->keterangan) ? $item->keterangan : '-' }}</td>
                                             </tr>
                                         @endforeach
                                     @else
